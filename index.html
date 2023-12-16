@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kavin Bucoy - Web Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-dTfgeB6XOpRqLACx3JRu5oIlvA/zCjcS/Z9NI0DTRX0bkfkgJ5NKG2Z0cpoNIneGIWM+AgwAuF7zAsMz9DypQQ=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width:800px)" href="tablet.css">
+    <link rel="stylesheet" media="screen and(max-width:530px)" href="phone.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: transparent;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .headings {
+            color: white;
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        #pic {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        #pic img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            border: 5px solid #3498db;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        #intro {
+            max-width: 600px;
+            text-align: left;
+            margin-left: 20px;
+        }
+
+        #about {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+        }
+
+        #about h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        #about p {
+            font-size: 1.2em;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.5;
+            color: #ccc;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            max-width: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .round {
+            width: 45%;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .round img {
+            width: 100%;
+            max-width: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .round h1,
+        .round h2,
+        .round p {
+            color: black;
+            font-weight: bold;
+        }
+
+        .form {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 1.2em;
+            margin-bottom: 8px;
+            color: #ccc;
+        }
+
+        .input,
+        #msg {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        #send {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #send:hover {
+            background-color: #45a049;
+        }
+
+        .subheading {
+            font-size: 1.5em;
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About Me</a></li>
+            <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="#resume"><i class="fas fa-file"></i> Resume</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact Me</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="main" style="background-color: transparent; color: #ecf0f1; padding: 50px 0; text-align: center;">
+        <h1 class="headings" style="font-size: 3em; margin-bottom: 20px;">Hello, I'm<br><span
+                style="color: #3498db;">KAVIN BUCOY</span></h1>
+        <p style="font-size: 1.2em; margin-bottom: 40px;">Web Developer | Passionate about crafting digital
+            experiences</p>
+        <button class="btn">HIRE ME</button>
+    </section>
+
+
+    <section id="about">
+        <h1 class="headings">ABOUT ME</h1>
+        <div id="pic">
+            <img src="kavinworks.jpg" alt="" style="width: 300px; height: 300px;">
+
+            <div id="intro" style="max-width: 600px; text-align: left; margin-left: 20px;">
+                <b><h2 style="font-size: 1.5em; font-family: 'Arial', sans-serif; color: #3498db;">KAVIN BUCOY</h2></b>
+                <p style="font-size: 1em; font-family: 'Arial', sans-serif; line-height: 1.5; color: #ccc;">
+                    Hi! My name is Kavin C. BUCOY, I'm 23 years old and currently living in Villagehome Bacoor, Cavite.
+                    My hobbies are watching, playing basketball, and traveling. I'm studying at CVSU Bacoor Campus to pursue
+                    my dream of becoming a web developer. I am passionate about leveraging technology to bring ideas to life
+                    and crafting engaging online experiences.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h1 class="headings">PORTFOLIO</h1>
+        <p>This is a collection of my projects showcasing my skills and expertise. Explore the variety of work I have
+            done below:</p>
+        <div class="gallery">
+            <img src="kavinworks.jpg" alt="">
+            <img src="login.png" alt="">
+            <img src="puzzle.jpg" alt="">
+            <img src="calculator.png" alt="">
+            <img src="snake.png" alt="">
+            <img src="database.jpg" alt="">
+        </div>
+    </section>
+
+    <section id="resume">
+        <h1 class="headings">RESUME</h1>
+        <div class="row">
+            <div class="round">
+                <img src="web.jpg" alt="">
+                <h1 class="headings">EDUCATION</h1>
+                <p><strong>BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</strong></p>
+                <p>2022-present<br>Cavite State University - Bacoor Campus</p>
+                <p><strong>(AUTOMOTIVE SERVICES)</strong><br>2016-2018<br>Technical Vocational School</p>
+            </div>
+            <div class="round">
+                <img src="hehe.png" alt="">
+                <h1 class="headings">WORK EXPERIENCE</h1>
+                <h2>MERCHANDISER</h2>
+                <p>At SM Molino brunch Supermarket</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h1 class="headings">GET IN TOUCH</h1>
+        <p class="subheading">Feel free to reach out!</p>
+
+        <form action="" class="form">
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" name="name" class="input" id="name" placeholder="Enter Your Name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" name="email" class="input" id="email" placeholder="Enter Your Email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="msg">Your Message:</label>
+                <textarea name="msg" id="msg" cols="30" rows="6" placeholder="Enter Your Message" required></textarea>
+            </div>
+
+            <input type="submit" value="SEND MESSAGE" id="send" class="btn">
+        </form>
+    </section>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
